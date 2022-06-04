@@ -4,11 +4,11 @@ namespace Spotify.Models
     {
         
         
-        public int id { get; set; }
-        public int idAlbum { get; set; }
-        public string? nome { get; set; }
+       // public int id { get; set; }
+       // public int idAlbum { get; set; }
+        public string Nome { get; set; }
 
-        public int duracao { get; set; }
+        public int Duracao { get; set; }
 
 
 

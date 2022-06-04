@@ -3,11 +3,13 @@ namespace Spotify.Models
     public class Banda
     {
         
-        public int id { get; set; }        
-        public string? nome { get; set; }
-        public string? descricao { get; set; }
+        //public int id { get; set; }        
+        public string Nome { get; set; }
+        public string? Descricao { get; set; }
 
-        public string? foto { get; set; }
+        public string Foto { get; set; }
+
+        public IList<Album> Albuns  { get; set; }
 
 
 
