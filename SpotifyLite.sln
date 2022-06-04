@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyLite.Domain", "SpotifyLite.Domain\SpotifyLite.Domain.csproj", "{87A00EBB-10D6-4093-B8F9-968546F3C63E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLite.CrossCutting", "SpotifyLite.CrossCutting\SpotifyLite.CrossCutting.csproj", "{053A1EA4-C09E-4E6A-B4CB-6684F639EBA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyLite.CrossCutting", "SpotifyLite.CrossCutting\SpotifyLite.CrossCutting.csproj", "{053A1EA4-C09E-4E6A-B4CB-6684F639EBA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
