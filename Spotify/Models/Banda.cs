@@ -1,3 +1,5 @@
+using Spotify.Models.Fatory;
+
 namespace Spotify.Models
 {
     public class Banda
@@ -9,9 +11,19 @@ namespace Spotify.Models
 
         public string Foto { get; set; }
 
-        public IList<Album> Albuns  { get; set; }
+        public IList<Album> Albums { get; set; }
 
+        public void CreateAlbum(string nome, IList<Musica> musicas)
+        {
+            var album = AlbumFactory.Create(nome, musicas);
+            this.Albums.Add(album);
+        }
 
+        public int QuantidadeAlbuns()
+            => this.Albums.Count;
+
+        public IEnumerable<Musica> ObterMusicas()
+            => this.Albums.SelectMany(x => x.Musicas).AsEnumerable();
 
 
 

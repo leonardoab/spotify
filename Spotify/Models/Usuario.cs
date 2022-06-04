@@ -9,7 +9,15 @@ namespace Spotify.Models
 
         public string Senha { get; set; }
 
+        public IList<Playlist> Playlists { get; set; }
 
+        public void SetPassword() { 
+        
+        
+        this.SetPassword = 
+        
+        
+        }
 
 
 

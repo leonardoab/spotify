@@ -9,7 +9,7 @@ namespace Spotify.Models
 
         public string Nome { get; set; }
 
-
+        public IList<Musica> Musicas { get; set; }
 
 
 
