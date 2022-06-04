@@ -1,1 +1,58 @@
-<mxfile host="app.diagrams.net" modified="2022-06-04T12:56:20.445Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" version="19.0.0" etag="pKHXNZ3JPPs2K2BK-4_Q" type="github"><diagram id="qG9dcaGkXVX1VTHdZHWu">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-06-04T13:29:05.149Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="H-_0ZhvSBGiQMg6P59WV" version="19.0.0" type="github">
+  <diagram id="qG9dcaGkXVX1VTHdZHWu" name="Page-1">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ypz-DjHLig-8UntKR-9N-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ypz-DjHLig-8UntKR-9N-1" target="ypz-DjHLig-8UntKR-9N-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="280" />
+              <mxPoint x="250" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-1" value="-Usuario&lt;br&gt;id&lt;br&gt;email&lt;br&gt;senha&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="140" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ypz-DjHLig-8UntKR-9N-2" target="ypz-DjHLig-8UntKR-9N-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="260" />
+              <mxPoint x="690" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-2" value="-Musica&lt;br&gt;id&lt;br&gt;idAlbum&lt;br&gt;nome" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="300" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-3" value="-Banda&lt;br&gt;id&lt;br&gt;foto&lt;br&gt;nome&lt;br&gt;descricao&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ypz-DjHLig-8UntKR-9N-4" target="ypz-DjHLig-8UntKR-9N-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-4" value="-Album&lt;br&gt;id&lt;br&gt;idBanda&lt;br&gt;nome" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="140" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-7" value="-Playlist&lt;br&gt;id&lt;br&gt;idusuario&lt;br&gt;nome" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="300" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ypz-DjHLig-8UntKR-9N-8" target="ypz-DjHLig-8UntKR-9N-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ypz-DjHLig-8UntKR-9N-8" target="ypz-DjHLig-8UntKR-9N-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-8" value="-ItemPlaylist&lt;br&gt;id&lt;br&gt;idPlaylist&lt;br&gt;idMusica" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ypz-DjHLig-8UntKR-9N-13" value="&lt;div&gt;Metodos&lt;/div&gt;&lt;div&gt;Login&lt;/div&gt;&lt;div&gt;Consultausuario&lt;/div&gt;&lt;div&gt;CadastrarUsuario&lt;/div&gt;&lt;div&gt;Lista&lt;/div&gt;&lt;div&gt;Consulta&lt;/div&gt;&lt;div&gt;Lista&lt;/div&gt;&lt;div&gt;Cadastrarplaylist&lt;/div&gt;&lt;div&gt;Editarplaylist&lt;/div&gt;&lt;div&gt;Excluirplaylist&lt;/div&gt;&lt;div&gt;Consulta&lt;/div&gt;&lt;div&gt;Lista&lt;/div&gt;&lt;div&gt;CadastrarMusica&lt;/div&gt;&lt;div&gt;EditarMusica&lt;/div&gt;&lt;div&gt;ExcluirMusica&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="100" width="100" height="280" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
