@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.csproj",
-      "projectName": "Spotify",
-      "projectPath": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.csproj",
+      "projectUniqueName": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.Domain.csproj",
+      "projectName": "Spotify.Domain",
+      "projectPath": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.Domain.csproj",
       "packagesPath": "C:\\Users\\lbezerra\\.nuget\\packages\\",
       "outputPath": "C:\\Repositorio\\Spotify\\Spotify\\obj\\",
       "projectStyle": "PackageReference",
@@ -61,9 +61,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

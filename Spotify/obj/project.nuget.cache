@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HU6HWoln+zJBOG8u0GE0T6qu4uvln+ogphINZVd6HfnUVvGBIXF8eWuDdK3/Id1ekWZYdzIpeG6UGO9EAQ6kaQ==",
+  "dgSpecHash": "S/qnr7kTevM2LyKyABgMLLVp++OtzFwRGS+fT2wcR6sGYcW0yr2gPhP511yoAlQwyUKPxD33pAVpiksjYGXA8g==",
   "success": true,
-  "projectFilePath": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.csproj",
+  "projectFilePath": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

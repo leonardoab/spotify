@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repositorio\\Spotify_2\\Spotify\\Spotify\\Spotify.csproj": {}
+    "C:\\Repositorio\\Spotify\\Spotify\\Spotify.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Repositorio\\Spotify_2\\Spotify\\Spotify\\Spotify.csproj": {
+    "C:\\Repositorio\\Spotify\\Spotify\\Spotify.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositorio\\Spotify_2\\Spotify\\Spotify\\Spotify.csproj",
-        "projectName": "Spotify",
-        "projectPath": "C:\\Repositorio\\Spotify_2\\Spotify\\Spotify\\Spotify.csproj",
+        "projectUniqueName": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.Domain.csproj",
+        "projectName": "Spotify.Domain",
+        "projectPath": "C:\\Repositorio\\Spotify\\Spotify\\Spotify.Domain.csproj",
         "packagesPath": "C:\\Users\\lbezerra\\.nuget\\packages\\",
-        "outputPath": "C:\\Repositorio\\Spotify_2\\Spotify\\Spotify\\obj\\",
+        "outputPath": "C:\\Repositorio\\Spotify\\Spotify\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
