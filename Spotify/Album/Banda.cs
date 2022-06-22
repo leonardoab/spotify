@@ -1,4 +1,5 @@
-﻿using SpotifyLite.Domain.Album.Factory;
+﻿using SpotifyLite.CrossCutting.Entity;
+using SpotifyLite.Domain.Album.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SpotifyLite.Domain.Album
 {
-    public class Banda
+    public class Banda : Entity<Guid>
     {
         public string Nome { get; set; }
         public string Foto { get; set; }
