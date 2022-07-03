@@ -26,6 +26,8 @@ namespace Spotify.Repository.Mapping
             {
                 p.Property(f => f.Valor).HasColumnName("Password").IsRequired();
             });
+
+            builder.HasMany(x => x.Playlists).WithOne();
         }
     }
 }

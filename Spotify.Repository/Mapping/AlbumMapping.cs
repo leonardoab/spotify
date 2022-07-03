@@ -19,6 +19,8 @@ namespace Spotify.Repository.Mapping
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(200);
             builder.Property(x => x.Backdrop);
             builder.Property(x => x.DataLancamento).IsRequired();
+
+            builder.HasMany(x => x.Musicas).WithOne().OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
