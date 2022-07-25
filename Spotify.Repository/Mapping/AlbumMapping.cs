@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SpotifyLite.Domain.Album;
+using Spotify.Domain.Album;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Spotify.Repository.Mapping
     {
         public void Configure(EntityTypeBuilder<Album> builder)
         {
-            builder.ToTable("Album");
+            builder.ToTable("Albuns");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(200);

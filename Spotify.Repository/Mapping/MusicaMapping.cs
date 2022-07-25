@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SpotifyLite.Domain.Album;
+using Spotify.Domain.Album;
 
 namespace Spotify.Repository.Mapping
 {
@@ -13,7 +13,7 @@ namespace Spotify.Repository.Mapping
     {
         public void Configure(EntityTypeBuilder<Musica> builder)
         {
-            builder.ToTable("Musica");
+            builder.ToTable("Musicas");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(200);

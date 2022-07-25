@@ -1,15 +1,15 @@
 ﻿using FluentValidation;
-using SpotifyLite.CrossCutting.Entity;
-using SpotifyLite.CrossCutting.Utils;
-using SpotifyLite.Domain.Account.Rules;
-using SpotifyLite.Domain.Account.ValueObject;
+using Spotify.Cross.Entity;
+using Spotify.Cross.Utils;
+using Spotify.Domain.Account.Rules;
+using Spotify.Domain.Account.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyLite.Domain.Account
+namespace Spotify.Domain.Account
 {
     public class Usuario : Entity<Guid>
     {

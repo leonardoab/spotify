@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyLite.Domain.Album.Factory
+namespace Spotify.Domain.Album.Factory
 {
     public static class AlbumFactory
     {

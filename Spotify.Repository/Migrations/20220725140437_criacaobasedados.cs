@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Spotify.Repository.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class criacaobasedados : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Banda",
+                name: "Bandas",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -20,11 +20,11 @@ namespace Spotify.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Banda", x => x.Id);
+                    table.PrimaryKey("PK_Bandas", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Usuario",
+                name: "Usuarios",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -34,11 +34,11 @@ namespace Spotify.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuario", x => x.Id);
+                    table.PrimaryKey("PK_Usuarios", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Album",
+                name: "Albuns",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -49,17 +49,17 @@ namespace Spotify.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Album", x => x.Id);
+                    table.PrimaryKey("PK_Albuns", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Album_Banda_BandaId",
+                        name: "FK_Albuns_Bandas_BandaId",
                         column: x => x.BandaId,
-                        principalTable: "Banda",
+                        principalTable: "Bandas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Playlist",
+                name: "Playlists",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -68,16 +68,16 @@ namespace Spotify.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Playlist", x => x.Id);
+                    table.PrimaryKey("PK_Playlists", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Playlist_Usuario_UsuarioId",
+                        name: "FK_Playlists_Usuarios_UsuarioId",
                         column: x => x.UsuarioId,
-                        principalTable: "Usuario",
+                        principalTable: "Usuarios",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Musica",
+                name: "Musicas",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -87,11 +87,11 @@ namespace Spotify.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Musica", x => x.Id);
+                    table.PrimaryKey("PK_Musicas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Musica_Album_AlbumId",
+                        name: "FK_Musicas_Albuns_AlbumId",
                         column: x => x.AlbumId,
-                        principalTable: "Album",
+                        principalTable: "Albuns",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -107,28 +107,23 @@ namespace Spotify.Repository.Migrations
                 {
                     table.PrimaryKey("PK_MusicaPlaylist", x => new { x.MusicasId, x.PlaylistsId });
                     table.ForeignKey(
-                        name: "FK_MusicaPlaylist_Musica_MusicasId",
+                        name: "FK_MusicaPlaylist_Musicas_MusicasId",
                         column: x => x.MusicasId,
-                        principalTable: "Musica",
+                        principalTable: "Musicas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MusicaPlaylist_Playlist_PlaylistsId",
+                        name: "FK_MusicaPlaylist_Playlists_PlaylistsId",
                         column: x => x.PlaylistsId,
-                        principalTable: "Playlist",
+                        principalTable: "Playlists",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Album_BandaId",
-                table: "Album",
+                name: "IX_Albuns_BandaId",
+                table: "Albuns",
                 column: "BandaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Musica_AlbumId",
-                table: "Musica",
-                column: "AlbumId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MusicaPlaylist_PlaylistsId",
@@ -136,8 +131,13 @@ namespace Spotify.Repository.Migrations
                 column: "PlaylistsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Playlist_UsuarioId",
-                table: "Playlist",
+                name: "IX_Musicas_AlbumId",
+                table: "Musicas",
+                column: "AlbumId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Playlists_UsuarioId",
+                table: "Playlists",
                 column: "UsuarioId");
         }
 
@@ -147,19 +147,19 @@ namespace Spotify.Repository.Migrations
                 name: "MusicaPlaylist");
 
             migrationBuilder.DropTable(
-                name: "Musica");
+                name: "Musicas");
 
             migrationBuilder.DropTable(
-                name: "Playlist");
+                name: "Playlists");
 
             migrationBuilder.DropTable(
-                name: "Album");
+                name: "Albuns");
 
             migrationBuilder.DropTable(
-                name: "Usuario");
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
-                name: "Banda");
+                name: "Bandas");
         }
     }
 }

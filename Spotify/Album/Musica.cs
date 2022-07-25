@@ -1,13 +1,13 @@
-﻿using SpotifyLite.CrossCutting.Entity;
-using SpotifyLite.Domain.Account;
-using SpotifyLite.Domain.Album.ValueObject;
+﻿using Spotify.Cross.Entity;
+using Spotify.Domain.Account;
+using Spotify.Domain.Album.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyLite.Domain.Album
+namespace Spotify.Domain.Album
 {
     public class Musica : Entity<Guid>
     {

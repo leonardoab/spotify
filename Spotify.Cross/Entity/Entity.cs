@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyLite.CrossCutting.Entity
+namespace Spotify.Cross.Entity
 {
     public class Entity<T>
     {

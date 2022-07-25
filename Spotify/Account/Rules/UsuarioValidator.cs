@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpotifyLite.Domain.Account.Rules
+namespace Spotify.Domain.Account.Rules
 {
     public class UsuarioValidator : AbstractValidator<Usuario>
     {
