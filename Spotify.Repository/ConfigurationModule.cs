@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Spotify.Domain.Account.Repository;
 using Spotify.Domain.Album.Repository;
 using Spotify.Repository.Context;
 using Spotify.Repository.Database;
@@ -24,7 +25,7 @@ namespace Spotify.Repository
 
             services.AddScoped(typeof(Repository<>));
             services.AddScoped<IAlbumRepository, AlbumRepository>();
-            //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             return services;
         }
