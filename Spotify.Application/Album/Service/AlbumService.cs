@@ -33,7 +33,7 @@ namespace Spotify.Application.Album.Service
 
         public async Task<List<AlbumOutputDto>> ObterTodos()
         {
-            var album = await this.albumRepository.GetAll();
+            var album = await this.albumRepository.ObterTodosAlbuns();
 
             return this.mapper.Map<List<AlbumOutputDto>>(album);
         }

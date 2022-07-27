@@ -14,10 +14,10 @@ namespace Spotify.Application.Album.Handler.Command
 
         public Guid IdBanda { get; set; }
 
-        public CreateAlbumCommand(AlbumInputDto album, Guid idBanda)
+        public CreateAlbumCommand(AlbumInputDto album)
         {
             Album = album;
-            IdBanda = idBanda;
+            
         }
     }
 
