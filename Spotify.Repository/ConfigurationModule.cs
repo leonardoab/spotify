@@ -27,6 +27,8 @@ namespace Spotify.Repository
             services.AddScoped<IAlbumRepository, AlbumRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IBandaRepository, BandaRepository>();
+            services.AddScoped<IPlaylistRepository, PlaylistRepository>();
+            services.AddScoped<IMusicaRepository, MusicaRepository>();
 
             return services;
         }
