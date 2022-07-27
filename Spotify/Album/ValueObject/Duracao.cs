@@ -22,7 +22,7 @@ namespace Spotify.Domain.Album.ValueObject
 
         public string Formatado => ValorFormatado();
 
-        private string ValorFormatado()
+        public string ValorFormatado()
         {
             var hours = Convert.ToInt32(Math.Floor(Convert.ToDecimal(this.Valor) / 3600));
             var duration = Convert.ToDecimal(hours % 3600);
