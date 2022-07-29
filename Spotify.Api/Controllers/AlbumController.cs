@@ -37,8 +37,9 @@ namespace Spotify.Api.Controllers
         public async Task<IActionResult> Deletar(AlbumInputDeleteDto dto)
         {
             var result = await this.mediator.Send(new DeleteAlbumCommand(dto));
-            if (result.Resultado == "Deleted") return Ok(result.Resultado);
-            else return NotFound(result.Resultado);
+            //if (result.Resultado == "Deleted") 
+            return Ok(result.Resultado);
+            //else return NotFound(result.Resultado);
             
         }
 
@@ -46,8 +47,8 @@ namespace Spotify.Api.Controllers
         public async Task<IActionResult> Atualizar(AlbumInputUpdateDto dto)
         {
             var result = await this.mediator.Send(new UpdateAlbumCommand(dto));
-            if (result.Resultado == "Updated") return Ok(result.Album);
-            else return NotFound(result.Resultado);
+            return Ok(result.Album);
+            
         }
 
        

@@ -45,7 +45,7 @@ namespace Spotify.Application.Album.Handler
         public async Task<UpdateAlbumCommandResponse> Handle(UpdateAlbumCommand request, CancellationToken cancellationToken)
         {
             var result = await this._albumService.Atualizar(request.Album);
-            return new UpdateAlbumCommandResponse(result,"Updated");
+            return new UpdateAlbumCommandResponse(result);
         }
 
 
