@@ -14,9 +14,11 @@ namespace Spotify.Application.Album.Dto
         string Backdrop, 
         List<MusicaInputDto> Musicas);
 
-    public record AlbumInputDeleteDto(Guid Id);
+    public record AlbumInputDeleteDto(
+        [Required(ErrorMessage = "ID é obrigatório")] Guid Id);
 
-    public record AlbumInputUpdateDto(Guid Id,
+    public record AlbumInputUpdateDto(
+       [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
        [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
        [Required(ErrorMessage = "Data Lançamento é obrigatório")] DateTime DataLancamento,
        string Backdrop);
