@@ -21,21 +21,44 @@ namespace Spotify.Application.Album.Service
             this.mapper = mapper;
         }
 
-        public async Task<AlbumOutputDto> Criar(AlbumInputDto dto)
+        public async Task<AlbumOutputCreateDto> Criar(AlbumInputCreateDto dto)
         {
             var album = this.mapper.Map<Spotify.Domain.Album.Album>(dto);
 
             await this.albumRepository.Save(album);
 
-            return this.mapper.Map<AlbumOutputDto>(album);
+            return this.mapper.Map<AlbumOutputCreateDto>(album);
 
         }
 
-        public async Task<List<AlbumOutputDto>> ObterTodos()
+        public async Task<AlbumOutputDeleteDto> Deletar(AlbumInputDeleteDto dto)
+        {
+            var album = this.mapper.Map<Spotify.Domain.Album.Album>(dto);
+
+            await this.albumRepository.Delete(album);
+
+            return this.mapper.Map<AlbumOutputDeleteDto>(album);
+
+        }
+
+        public async Task<AlbumOutputUpdateDto> Atualizar(AlbumInputUpdateDto dto)
+        {
+            var album = this.mapper.Map<Spotify.Domain.Album.Album>(dto);
+
+            await this.albumRepository.Update(album);
+
+            return this.mapper.Map<AlbumOutputUpdateDto>(album);
+
+        }
+
+        
+
+
+        public async Task<List<AlbumOutputCreateDto>> ObterTodos()
         {
             var album = await this.albumRepository.ObterTodosAlbuns();
 
-            return this.mapper.Map<List<AlbumOutputDto>>(album);
+            return this.mapper.Map<List<AlbumOutputCreateDto>>(album);
         }
     }
 }

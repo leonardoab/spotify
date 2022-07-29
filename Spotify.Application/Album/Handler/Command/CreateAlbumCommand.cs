@@ -10,11 +10,11 @@ namespace Spotify.Application.Album.Handler.Command
 {
     public class CreateAlbumCommand : IRequest<CreateAlbumCommandResponse>
     {
-        public AlbumInputDto Album { get; set; }
+        public AlbumInputCreateDto Album { get; set; }
 
         public Guid IdBanda { get; set; }
 
-        public CreateAlbumCommand(AlbumInputDto album)
+        public CreateAlbumCommand(AlbumInputCreateDto album)
         {
             Album = album;
             
@@ -23,9 +23,9 @@ namespace Spotify.Application.Album.Handler.Command
 
     public class CreateAlbumCommandResponse
     {
-        public AlbumOutputDto Album { get; set; }
+        public AlbumOutputCreateDto Album { get; set; }
 
-        public CreateAlbumCommandResponse(AlbumOutputDto album)
+        public CreateAlbumCommandResponse(AlbumOutputCreateDto album)
         {
             Album = album;
         }

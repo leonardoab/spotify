@@ -11,7 +11,12 @@ using System.Threading.Tasks;
 namespace Spotify.Application.Album.Handler
 {
     public class AlbumHandler : IRequestHandler<CreateAlbumCommand, CreateAlbumCommandResponse>,
-                                IRequestHandler<GetAllAlbumQuery, GetAllAlbumQueryResponse>
+                                IRequestHandler<GetAllAlbumQuery, GetAllAlbumQueryResponse>,
+                                IRequestHandler<DeleteAlbumCommand, DeleteAlbumCommandResponse>,
+                                IRequestHandler<UpdateAlbumCommand, UpdateAlbumCommandResponse>
+                                
+
+
     {
         private readonly IAlbumService _albumService;
 
@@ -26,10 +31,28 @@ namespace Spotify.Application.Album.Handler
             return new CreateAlbumCommandResponse(result);
         }
 
+        public async Task<DeleteAlbumCommandResponse> Handle(DeleteAlbumCommand request, CancellationToken cancellationToken)
+        {
+            var result = await this._albumService.Deletar(request.Album);
+            return new DeleteAlbumCommandResponse(result);
+        }
+
+        public async Task<UpdateAlbumCommandResponse> Handle(UpdateAlbumCommand request, CancellationToken cancellationToken)
+        {
+            var result = await this._albumService.Atualizar(request.Album);
+            return new UpdateAlbumCommandResponse(result);
+        }
+
+
+
+
+
         public async Task<GetAllAlbumQueryResponse> Handle(GetAllAlbumQuery request, CancellationToken cancellationToken)
         {
             var result = await this._albumService.ObterTodos();
             return new GetAllAlbumQueryResponse(result);
         }
+
+
     }
 }

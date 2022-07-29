@@ -4,7 +4,10 @@ namespace Spotify.Application.Album.Service
 {
     public interface IAlbumService
     {
-        Task<AlbumOutputDto> Criar(AlbumInputDto dto);
-        Task<List<AlbumOutputDto>> ObterTodos();
+        Task<AlbumOutputCreateDto> Criar(AlbumInputCreateDto dto);
+        Task<AlbumOutputDeleteDto> Deletar(AlbumInputDeleteDto dto);
+        Task<AlbumOutputUpdateDto> Atualizar(AlbumInputUpdateDto dto);        
+        Task<List<AlbumOutputCreateDto>> ObterTodos();
+        
     }
 }

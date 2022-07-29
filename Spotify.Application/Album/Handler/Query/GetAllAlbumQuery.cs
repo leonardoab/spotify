@@ -15,9 +15,9 @@ namespace Spotify.Application.Album.Handler.Query
 
     public class GetAllAlbumQueryResponse
     {
-        public IList<AlbumOutputDto> Albums { get; set; }
+        public IList<AlbumOutputCreateDto> Albums { get; set; }
 
-        public GetAllAlbumQueryResponse(IList<AlbumOutputDto> albums)
+        public GetAllAlbumQueryResponse(IList<AlbumOutputCreateDto> albums)
         {
             Albums = albums;
         }
