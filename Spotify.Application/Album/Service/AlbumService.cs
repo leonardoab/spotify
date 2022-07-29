@@ -41,6 +41,18 @@ namespace Spotify.Application.Album.Service
 
         }
 
+        public async Task<AlbumOutputDeleteDto> BuscarPorId(Guid id)
+        {
+            var album = await this.albumRepository.Get(id);
+
+            return this.mapper.Map<AlbumOutputDeleteDto>(album);
+
+        }
+
+
+
+        //
+
         public async Task<AlbumOutputUpdateDto> Atualizar(AlbumInputUpdateDto dto)
         {
             var album = this.mapper.Map<Spotify.Domain.Album.Album>(dto);
@@ -50,8 +62,6 @@ namespace Spotify.Application.Album.Service
             return this.mapper.Map<AlbumOutputUpdateDto>(album);
 
         }
-
-        
 
 
         public async Task<List<AlbumOutputCreateDto>> ObterTodos()

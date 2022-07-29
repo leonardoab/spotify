@@ -23,9 +23,12 @@ namespace Spotify.Application.Album.Handler.Command
     {
         public AlbumOutputUpdateDto Album { get; set; }
 
-        public UpdateAlbumCommandResponse(AlbumOutputUpdateDto album)
+        public string Resultado;
+
+        public UpdateAlbumCommandResponse(AlbumOutputUpdateDto album, string resultado)
         {
             Album = album;
+            Resultado = resultado;
         }
     }
 }

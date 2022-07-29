@@ -21,11 +21,11 @@ namespace Spotify.Application.Album.Handler.Command
 
     public class DeleteAlbumCommandResponse
     {
-        public AlbumOutputDeleteDto Album { get; set; }
+        public string Resultado;
 
-        public DeleteAlbumCommandResponse(AlbumOutputDeleteDto album)
+        public DeleteAlbumCommandResponse(string resultado)
         {
-            Album = album;
+            Resultado = resultado;
         }
     }
 }

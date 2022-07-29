@@ -14,7 +14,7 @@ namespace Spotify.Application.Album.Handler
                                 IRequestHandler<GetAllAlbumQuery, GetAllAlbumQueryResponse>,
                                 IRequestHandler<DeleteAlbumCommand, DeleteAlbumCommandResponse>,
                                 IRequestHandler<UpdateAlbumCommand, UpdateAlbumCommandResponse>
-                                
+
 
 
     {
@@ -33,18 +33,20 @@ namespace Spotify.Application.Album.Handler
 
         public async Task<DeleteAlbumCommandResponse> Handle(DeleteAlbumCommand request, CancellationToken cancellationToken)
         {
+            //var result = await this._albumService.BuscarPorIdExclusao(request.Album);
+            //if (result == null) return new DeleteAlbumCommandResponse("ID não Encontrado");
+            //else
+            // {
             var result = await this._albumService.Deletar(request.Album);
-            return new DeleteAlbumCommandResponse(result);
+            return new DeleteAlbumCommandResponse("Deleted");
+            //}
         }
 
         public async Task<UpdateAlbumCommandResponse> Handle(UpdateAlbumCommand request, CancellationToken cancellationToken)
         {
             var result = await this._albumService.Atualizar(request.Album);
-            return new UpdateAlbumCommandResponse(result);
+            return new UpdateAlbumCommandResponse(result,"Updated");
         }
-
-
-
 
 
         public async Task<GetAllAlbumQueryResponse> Handle(GetAllAlbumQuery request, CancellationToken cancellationToken)

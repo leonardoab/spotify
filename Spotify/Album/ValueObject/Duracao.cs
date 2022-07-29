@@ -25,7 +25,7 @@ namespace Spotify.Domain.Album.ValueObject
         public string ValorFormatado()
         {
             var hours = Convert.ToInt32(Math.Floor(Convert.ToDecimal(this.Valor) / 3600));
-            var duration = Convert.ToDecimal(hours % 3600);
+            var duration = Convert.ToDecimal(this.Valor % 3600);
 
             var minutos = Math.Floor(duration / 60);
             var segundos = duration % 60;
@@ -33,7 +33,7 @@ namespace Spotify.Domain.Album.ValueObject
             if (hours > 0)
                 return $"{hours.ToString().PadLeft(2, '0')}:{minutos.ToString().PadLeft(2, '0')}:{segundos.ToString().PadLeft(2, '0')}";
 
-            return $"{minutos.ToString().PadLeft(2, '0')} Min  {segundos.ToString().PadLeft(2, '0')} Seg";
+            return $"00:{minutos.ToString().PadLeft(2, '0')}:{segundos.ToString().PadLeft(2, '0')}";
 
         }
 

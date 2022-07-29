@@ -8,6 +8,8 @@ namespace Spotify.Application.Album.Service
         Task<AlbumOutputDeleteDto> Deletar(AlbumInputDeleteDto dto);
         Task<AlbumOutputUpdateDto> Atualizar(AlbumInputUpdateDto dto);        
         Task<List<AlbumOutputCreateDto>> ObterTodos();
-        
+        Task<AlbumOutputDeleteDto> BuscarPorId(Guid id);
+
+
     }
 }
