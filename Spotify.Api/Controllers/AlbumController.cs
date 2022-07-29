@@ -25,6 +25,7 @@ namespace Spotify.Api.Controllers
             return Ok(await this.mediator.Send(new GetAllAlbumQuery()));
         }
 
+        //[HttpPost("{idBanda}")]
         [HttpPost]
         public async Task<IActionResult> Criar(AlbumInputCreateDto dto)
         {
