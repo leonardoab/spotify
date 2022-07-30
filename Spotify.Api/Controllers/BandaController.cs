@@ -16,7 +16,7 @@ namespace Spotify.Api.Controllers
             this.bandaService = bandaService;
         }
 
-        [HttpGet]
+        /*[HttpGet]
         public async Task<IActionResult> ObterTodos()
         {
             return Ok(await this.bandaService.ObterTodos());
@@ -31,6 +31,8 @@ namespace Spotify.Api.Controllers
             var result = await this.bandaService.Criar(dto);
 
             return Created($"/{result.Id}", result);
-        }
+        }*/
+
+
     }
 }

@@ -22,20 +22,40 @@ namespace Spotify.Application.Album.Service
             this.mapper = mapper;
         }
 
-        public async Task<BandaOutputDto> Criar(BandaInputDto dto)
+        public async Task<BandaOutputCreateDto> Criar(BandaInputCreateDto dto)
         {
-            var banda = this.mapper.Map<Banda>(dto);
+            var banda = this.mapper.Map<Spotify.Domain.Album.Banda>(dto);
 
             await this.bandaRepository.Save(banda);
 
-            return this.mapper.Map<BandaOutputDto>(banda);
+            return this.mapper.Map<BandaOutputCreateDto>(banda);
         }
 
-        public async Task<List<BandaOutputDto>> ObterTodos()
+        public async Task<BandaOutputUpdateDeleteDto> Deletar(BandaInputDeleteDto dto)
+        {
+            var banda = this.mapper.Map<Spotify.Domain.Album.Banda>(dto);
+
+            await this.bandaRepository.Delete(banda);
+
+            return this.mapper.Map<BandaOutputUpdateDeleteDto>(banda);
+
+        }
+
+        public async Task<BandaOutputUpdateDeleteDto> Atualizar(BandaInputUpdateDto dto)
+        {
+            var banda = this.mapper.Map<Spotify.Domain.Album.Banda>(dto);
+
+            await this.bandaRepository.Update(banda);
+
+            return this.mapper.Map<BandaOutputUpdateDeleteDto>(banda);
+
+        }
+
+        public async Task<List<BandaOutputCreateDto>> ObterTodos()
         {
             var result = await this.bandaRepository.GetAll();
 
-            return this.mapper.Map<List<BandaOutputDto>>(result);
+            return this.mapper.Map<List<BandaOutputCreateDto>>(result);
         }
 
     }
