@@ -17,11 +17,9 @@ namespace Spotify.Test.Application
         
 
         [Fact]
-#pragma warning disable CS1998 // O método assíncrono não possui operadores 'await' e será executado de forma síncrona
         public async Task DeveCriarBandaComSucesso()
-#pragma warning restore CS1998 // O método assíncrono não possui operadores 'await' e será executado de forma síncrona
         {
-            /*BandaInputDto dtoInput = new BandaInputDto("XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
+            BandaInputCreateDto dtoInput = new BandaInputCreateDto("XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
             BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");   
             
 
@@ -43,7 +41,93 @@ namespace Spotify.Test.Application
             var service = new BandaService(mockRepository.Object, mockMapper.Object);
             var result = await service.Criar(dtoInput);
 
-            Assert.NotNull(result);*/
+            Assert.NotNull(result);
+
+
+        }
+
+        [Fact]
+        public async Task DeveExcluirBandaComSucesso()
+        {
+            BandaInputDeleteDto dtoInput = new BandaInputDeleteDto(Guid.NewGuid());
+            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
+
+
+            Mock<IBandaRepository> mockRepository = new Mock<IBandaRepository>();
+            Mock<IMapper> mockMapper = new Mock<IMapper>();
+
+            Banda banda = new Banda()
+            {
+                Descricao = "Lorem Ipsom",
+                Foto = "lorem ipsum",
+                Nome = "Xpto"
+            };
+
+            mockMapper.Setup(x => x.Map<Banda>(dtoInput)).Returns(banda);
+            mockMapper.Setup(x => x.Map<BandaOutputDto>(banda)).Returns(dtoOutput);
+
+            mockRepository.Setup(x => x.Save(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
+
+            var service = new BandaService(mockRepository.Object, mockMapper.Object);
+            var result = await service.Deletar(dtoInput);
+
+            Assert.NotNull(result);
+
+
+        }
+
+        [Fact]
+        public async Task DeveAtualizarBandaComSucesso()
+        {
+            BandaInputUpdateDto dtoInput = new BandaInputUpdateDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
+            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
+
+
+            Mock<IBandaRepository> mockRepository = new Mock<IBandaRepository>();
+            Mock<IMapper> mockMapper = new Mock<IMapper>();
+
+            Banda banda = new Banda()
+            {
+                Descricao = "Lorem Ipsom",
+                Foto = "lorem ipsum",
+                Nome = "Xpto"
+            };
+
+            mockMapper.Setup(x => x.Map<Banda>(dtoInput)).Returns(banda);
+            mockMapper.Setup(x => x.Map<BandaOutputDto>(banda)).Returns(dtoOutput);
+
+            mockRepository.Setup(x => x.Save(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
+
+            var service = new BandaService(mockRepository.Object, mockMapper.Object);
+            var result = await service.Atualizar(dtoInput);
+
+            Assert.NotNull(result);
+
+
+        }
+
+        [Fact]
+        public async Task DeveBuscarTodosComSucesso()
+        {
+            Mock<IBandaRepository> mockRepository = new Mock<IBandaRepository>();
+            Mock<IMapper> mockMapper = new Mock<IMapper>();
+
+            Banda banda = new Banda()
+            {
+                Descricao = "Lorem Ipsom",
+                Foto = "lorem ipsum",
+                Nome = "Xpto"
+            };
+
+            mockMapper.Setup(x => x.Map<Banda>(dtoInput)).Returns(banda);
+            mockMapper.Setup(x => x.Map<BandaOutputDto>(banda)).Returns(dtoOutput);
+
+            mockRepository.Setup(x => x.Save(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
+
+            var service = new BandaService(mockRepository.Object, mockMapper.Object);
+            var result = await service.Atualizar(dtoInput);
+
+            Assert.NotNull(result);
 
 
         }
