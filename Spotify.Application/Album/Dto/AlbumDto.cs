@@ -44,8 +44,8 @@ namespace Spotify.Application.Album.Dto
     public record BandaInputCreateDto(
                 [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
                 [Required(ErrorMessage = "Foto é obrigatório")] string Foto,
-                [Required(ErrorMessage = "Descrição é obrigatório")] string Descricao,
-                List<AlbumInputCreateDto> Albuns);
+                [Required(ErrorMessage = "Descrição é obrigatório")] string Descricao
+                );
 
     public record BandaInputUpdateDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
@@ -54,11 +54,9 @@ namespace Spotify.Application.Album.Dto
                 [Required(ErrorMessage = "Descrição é obrigatório")] string Descricao);
 
     public record BandaInputDeleteDto(
-                [Required(ErrorMessage = "ID é obrigatório")] Guid Id);
+                [Required(ErrorMessage = "ID é obrigatório")] Guid Id);    
 
-    public record BandaOutputCreateDto(Guid Id, string Nome, string Foto, string Descricao, List<AlbumInputCreateDto> Albuns);
-
-    public record BandaOutputUpdateDeleteDto(Guid Id, string Nome, string Foto, string Descricao);
+    public record BandaOutputDto(Guid Id, string Nome, string Foto, string Descricao);
 
     
 

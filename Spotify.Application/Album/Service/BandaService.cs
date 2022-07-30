@@ -22,40 +22,40 @@ namespace Spotify.Application.Album.Service
             this.mapper = mapper;
         }
 
-        public async Task<BandaOutputCreateDto> Criar(BandaInputCreateDto dto)
+        public async Task<BandaOutputDto> Criar(BandaInputCreateDto dto)
         {
             var banda = this.mapper.Map<Spotify.Domain.Album.Banda>(dto);
 
             await this.bandaRepository.Save(banda);
 
-            return this.mapper.Map<BandaOutputCreateDto>(banda);
+            return this.mapper.Map<BandaOutputDto>(banda);
         }
 
-        public async Task<BandaOutputUpdateDeleteDto> Deletar(BandaInputDeleteDto dto)
+        public async Task<BandaOutputDto> Deletar(BandaInputDeleteDto dto)
         {
             var banda = this.mapper.Map<Spotify.Domain.Album.Banda>(dto);
 
             await this.bandaRepository.Delete(banda);
 
-            return this.mapper.Map<BandaOutputUpdateDeleteDto>(banda);
+            return this.mapper.Map<BandaOutputDto>(banda);
 
         }
 
-        public async Task<BandaOutputUpdateDeleteDto> Atualizar(BandaInputUpdateDto dto)
+        public async Task<BandaOutputDto> Atualizar(BandaInputUpdateDto dto)
         {
             var banda = this.mapper.Map<Spotify.Domain.Album.Banda>(dto);
 
             await this.bandaRepository.Update(banda);
 
-            return this.mapper.Map<BandaOutputUpdateDeleteDto>(banda);
+            return this.mapper.Map<BandaOutputDto>(banda);
 
         }
 
-        public async Task<List<BandaOutputCreateDto>> ObterTodos()
+        public async Task<List<BandaOutputDto>> ObterTodos()
         {
             var result = await this.bandaRepository.GetAll();
 
-            return this.mapper.Map<List<BandaOutputCreateDto>>(result);
+            return this.mapper.Map<List<BandaOutputDto>>(result);
         }
 
     }

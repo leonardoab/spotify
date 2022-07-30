@@ -23,9 +23,9 @@ namespace Spotify.Application.Banda.Handler.Command
 
     public class CreateBandaCommandResponse
     {
-        public BandaOutputCreateDto Banda { get; set; }
+        public BandaOutputDto Banda { get; set; }
 
-        public CreateBandaCommandResponse(BandaOutputCreateDto banda)
+        public CreateBandaCommandResponse(BandaOutputDto banda)
         {
             Banda = banda;
         }

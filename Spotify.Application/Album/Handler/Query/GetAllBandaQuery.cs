@@ -15,9 +15,9 @@ namespace Spotify.Application.Banda.Handler.Query
 
     public class GetAllBandaQueryResponse
     {
-        public IList<BandaOutputCreateDto> Bandas { get; set; }
+        public IList<BandaOutputDto> Bandas { get; set; }
 
-        public GetAllBandaQueryResponse(IList<BandaOutputCreateDto> bandas)
+        public GetAllBandaQueryResponse(IList<BandaOutputDto> bandas)
         {
             Bandas = bandas;
         }

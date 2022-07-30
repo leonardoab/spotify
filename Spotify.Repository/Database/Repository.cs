@@ -51,15 +51,19 @@ namespace Spotify.Repository.Database
 
         public async Task<T> FindOneByCriteria(Expression<Func<T, bool>> expression)
         {
+#pragma warning disable CS8603 // Possível retorno de referência nula.
             return await this.Query
                              .AsNoTrackingWithIdentityResolution()
                              .FirstOrDefaultAsync(expression);
+#pragma warning restore CS8603 // Possível retorno de referência nula.
 
         }
 
         public async Task<T> Get(object id)
         {
+#pragma warning disable CS8603 // Possível retorno de referência nula.
             return await this.Query.FindAsync(id);
+#pragma warning restore CS8603 // Possível retorno de referência nula.
         }
 
         public async Task<IEnumerable<T>> GetAll()

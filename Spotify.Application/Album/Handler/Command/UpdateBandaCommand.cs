@@ -21,9 +21,9 @@ namespace Spotify.Application.Banda.Handler.Command
 
     public class UpdateBandaCommandResponse
     {
-        public BandaOutputUpdateDeleteDto Banda { get; set; }
+        public BandaOutputDto Banda { get; set; }
 
-        public UpdateBandaCommandResponse(BandaOutputUpdateDeleteDto banda)
+        public UpdateBandaCommandResponse(BandaOutputDto banda)
         {
             Banda = banda;
 

@@ -30,9 +30,9 @@ namespace Spotify.Application.Album.Profile
 
             CreateMap<BandaInputDeleteDto, Spotify.Domain.Album.Banda>();
 
-            CreateMap<Spotify.Domain.Album.Banda, BandaOutputCreateDto>();
+            CreateMap<Spotify.Domain.Album.Banda, BandaOutputDto>();
 
-            CreateMap<Spotify.Domain.Album.Banda, BandaOutputUpdateDeleteDto>();
+            CreateMap<Spotify.Domain.Album.Banda, BandaOutputDto>();
 
             CreateMap<MusicaInputCreateDto, Spotify.Domain.Album.Musica>()
                 .ForPath(x => x.Duracao.Valor, f => f.MapFrom(m => m.Duracao)); 

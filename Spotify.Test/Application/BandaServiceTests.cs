@@ -17,7 +17,9 @@ namespace Spotify.Test.Application
         
 
         [Fact]
+#pragma warning disable CS1998 // O método assíncrono não possui operadores 'await' e será executado de forma síncrona
         public async Task DeveCriarBandaComSucesso()
+#pragma warning restore CS1998 // O método assíncrono não possui operadores 'await' e será executado de forma síncrona
         {
             /*BandaInputDto dtoInput = new BandaInputDto("XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
             BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");   

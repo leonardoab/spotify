@@ -17,11 +17,4 @@
     <ProjectReference Include="..\Spotify\Spotify.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Account\Dto\" />
-    <Folder Include="Account\Handler\" />
-    <Folder Include="Account\Service\" />
-    <Folder Include="Account\Profile\" />
-  </ItemGroup>
-
 </Project>

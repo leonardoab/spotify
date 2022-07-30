@@ -4,9 +4,9 @@ namespace Spotify.Application.Album.Service
 {
     public interface IBandaService
     {
-        Task<BandaOutputCreateDto> Criar(BandaInputCreateDto dto);
-        Task<BandaOutputUpdateDeleteDto> Deletar(BandaInputDeleteDto dto);
-        Task<BandaOutputUpdateDeleteDto> Atualizar(BandaInputUpdateDto dto);
-        Task<List<BandaOutputCreateDto>> ObterTodos();
+        Task<BandaOutputDto> Criar(BandaInputCreateDto dto);
+        Task<BandaOutputDto> Deletar(BandaInputDeleteDto dto);
+        Task<BandaOutputDto> Atualizar(BandaInputUpdateDto dto);
+        Task<List<BandaOutputDto>> ObterTodos();
     }
 }
