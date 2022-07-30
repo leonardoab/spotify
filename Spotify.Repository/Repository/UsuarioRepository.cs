@@ -15,6 +15,7 @@ namespace Spotify.Repository.Repository
     {
         public UsuarioRepository(SpotifyContext context) : base(context)
         {
-        }
+            
+        }        
     }
 }

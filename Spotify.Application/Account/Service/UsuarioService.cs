@@ -24,7 +24,8 @@ namespace Spotify.Application.Account.Service
         {
             var Usuario = this.mapper.Map<Spotify.Domain.Account.Usuario>(dto);
 
-            await this.musicaRepository.Save(Usuario);
+            Usuario.Validate();
+            Usuario.SetPassword();            
 
             return this.mapper.Map<UsuarioOutputDto>(Usuario);
 
@@ -43,6 +44,8 @@ namespace Spotify.Application.Account.Service
         public async Task<UsuarioOutputDto> Atualizar(UsuarioInputUpdateDto dto)
         {
             var Usuario = this.mapper.Map<Spotify.Domain.Account.Usuario>(dto);
+
+            Usuario.Validate();
 
             await this.musicaRepository.Update(Usuario);
 
