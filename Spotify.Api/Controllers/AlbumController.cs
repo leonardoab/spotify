@@ -20,6 +20,7 @@ namespace Spotify.Api.Controllers
         }
 
         [HttpGet]
+        [Route("ListarTodos")]
         public async Task<IActionResult> ListarTodos()
         {
             return Ok(await this.mediator.Send(new GetAllAlbumQuery()));
@@ -27,6 +28,7 @@ namespace Spotify.Api.Controllers
 
         //[HttpPost("{idBanda}")]
         [HttpPost]
+        [Route("Criar")]
         public async Task<IActionResult> Criar(AlbumInputCreateDto dto)
         {
             var result = await this.mediator.Send(new CreateAlbumCommand(dto));
@@ -34,24 +36,28 @@ namespace Spotify.Api.Controllers
         }
 
         [HttpDelete]
+        [Route("Deletar")]
         public async Task<IActionResult> Deletar(AlbumInputDeleteDto dto)
         {
             var result = await this.mediator.Send(new DeleteAlbumCommand(dto));
             //if (result.Resultado == "Deleted") 
             return Ok(result.Resultado);
             //else return NotFound(result.Resultado);
-            
+
         }
 
         [HttpPatch]
+        [Route("Atualizar")]
         public async Task<IActionResult> Atualizar(AlbumInputUpdateDto dto)
         {
             var result = await this.mediator.Send(new UpdateAlbumCommand(dto));
             return Ok(result.Album);
-            
+
         }
 
-       
+        
+
+
 
 
     }

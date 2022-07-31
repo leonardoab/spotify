@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Spotify.Application.Account.Dto
 {
-
+    
 
     public record UsuarioInputCreateDto(
         [Required(ErrorMessage = "Nome é obrigatório")] string Nome,

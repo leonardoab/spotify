@@ -66,7 +66,7 @@ namespace Spotify.Test.Application
             mockMapper.Setup(x => x.Map<Banda>(dtoInput)).Returns(banda);
             mockMapper.Setup(x => x.Map<BandaOutputDto>(banda)).Returns(dtoOutput);
 
-            mockRepository.Setup(x => x.Save(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
+            mockRepository.Setup(x => x.Delete(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
 
             var service = new BandaService(mockRepository.Object, mockMapper.Object);
             var result = await service.Deletar(dtoInput);
@@ -96,7 +96,7 @@ namespace Spotify.Test.Application
             mockMapper.Setup(x => x.Map<Banda>(dtoInput)).Returns(banda);
             mockMapper.Setup(x => x.Map<BandaOutputDto>(banda)).Returns(dtoOutput);
 
-            mockRepository.Setup(x => x.Save(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
+            mockRepository.Setup(x => x.Update(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
 
             var service = new BandaService(mockRepository.Object, mockMapper.Object);
             var result = await service.Atualizar(dtoInput);
@@ -106,31 +106,7 @@ namespace Spotify.Test.Application
 
         }
 
-        [Fact]
-        public async Task DeveBuscarTodosComSucesso()
-        {
-            Mock<IBandaRepository> mockRepository = new Mock<IBandaRepository>();
-            Mock<IMapper> mockMapper = new Mock<IMapper>();
-
-            Banda banda = new Banda()
-            {
-                Descricao = "Lorem Ipsom",
-                Foto = "lorem ipsum",
-                Nome = "Xpto"
-            };
-
-            mockMapper.Setup(x => x.Map<Banda>(dtoInput)).Returns(banda);
-            mockMapper.Setup(x => x.Map<BandaOutputDto>(banda)).Returns(dtoOutput);
-
-            mockRepository.Setup(x => x.Save(It.IsAny<Banda>())).Returns(Task.FromResult(banda));
-
-            var service = new BandaService(mockRepository.Object, mockMapper.Object);
-            var result = await service.Atualizar(dtoInput);
-
-            Assert.NotNull(result);
-
-
-        }
+        
 
     }
 }
