@@ -16,11 +16,13 @@ namespace Spotify.Test.Application
     {
         
 
-       /* [Fact]
+        [Fact]
         public async Task DeveCriarBandaComSucesso()
         {
+            List<AlbumOutputUpdateDeleteDto> Albuns = new List<AlbumOutputUpdateDeleteDto>();
+
             BandaInputCreateDto dtoInput = new BandaInputCreateDto("XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
-            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");   
+            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda", Albuns);   
             
 
             Mock<IBandaRepository> mockRepository = new Mock<IBandaRepository>();
@@ -49,8 +51,10 @@ namespace Spotify.Test.Application
         [Fact]
         public async Task DeveExcluirBandaComSucesso()
         {
+            List<AlbumOutputUpdateDeleteDto> Albuns = new List<AlbumOutputUpdateDeleteDto>();
+
             BandaInputDeleteDto dtoInput = new BandaInputDeleteDto(Guid.NewGuid());
-            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
+            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda",Albuns);
 
 
             Mock<IBandaRepository> mockRepository = new Mock<IBandaRepository>();
@@ -79,8 +83,10 @@ namespace Spotify.Test.Application
         [Fact]
         public async Task DeveAtualizarBandaComSucesso()
         {
+            List<AlbumOutputUpdateDeleteDto> Albuns = new List<AlbumOutputUpdateDeleteDto>();
+
             BandaInputUpdateDto dtoInput = new BandaInputUpdateDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
-            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
+            BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda",Albuns);
 
 
             Mock<IBandaRepository> mockRepository = new Mock<IBandaRepository>();
@@ -104,7 +110,7 @@ namespace Spotify.Test.Application
             Assert.NotNull(result);
 
 
-        }*/
+        }
 
         
 

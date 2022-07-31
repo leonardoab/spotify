@@ -18,7 +18,7 @@ namespace Spotify.Application.Album.Profile
 
             CreateMap<Spotify.Domain.Album.Album, AlbumOutputUpdateDeleteDto>();
 
-            CreateMap<AlbumInputCreateDto, Spotify.Domain.Album.Album>();
+            CreateMap<AlbumInputCreateDto, Spotify.Domain.Album.Album>();            
 
             CreateMap<AlbumInputUpdateDto, Spotify.Domain.Album.Album>();
 

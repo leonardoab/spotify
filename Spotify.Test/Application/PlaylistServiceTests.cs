@@ -2,6 +2,7 @@
 using Moq;
 using Spotify.Application.Account.Dto;
 using Spotify.Application.Account.Service;
+using Spotify.Application.Album.Dto;
 using Spotify.Domain.Account;
 using Spotify.Domain.Account.Repository;
 using System;
@@ -17,8 +18,10 @@ namespace Spotify.Test.Application
         [Fact]
         public async Task DeveCriarPlaylistComSucesso()
         {
+            List<MusicaOutputDto> Musicas = new List<MusicaOutputDto>();
+
             PlaylistInputCreateDto dtoInput = new PlaylistInputCreateDto("XTPO");
-            PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO");
+            PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO", Musicas);
 
 
             Mock<IPlaylistRepository> mockRepository = new Mock<IPlaylistRepository>();
@@ -45,8 +48,11 @@ namespace Spotify.Test.Application
         [Fact]
         public async Task DeveExcluirPlaylistComSucesso()
         {
+
+            List<MusicaOutputDto> Musicas = new List<MusicaOutputDto>();
+
             PlaylistInputDeleteDto dtoInput = new PlaylistInputDeleteDto(Guid.NewGuid());
-            PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO");
+            PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO",Musicas);
 
 
             Mock<IPlaylistRepository> mockRepository = new Mock<IPlaylistRepository>();
@@ -73,8 +79,10 @@ namespace Spotify.Test.Application
         [Fact]
         public async Task DeveAtualizarPlaylistComSucesso()
         {
+            List<MusicaOutputDto> Musicas = new List<MusicaOutputDto>();
+
             PlaylistInputUpdateDto dtoInput = new PlaylistInputUpdateDto(Guid.NewGuid(), "XTPO");
-            PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO");
+            PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO", Musicas);
 
 
             Mock<IPlaylistRepository> mockRepository = new Mock<IPlaylistRepository>();

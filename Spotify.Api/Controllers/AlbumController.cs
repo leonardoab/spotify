@@ -34,7 +34,7 @@ namespace Spotify.Api.Controllers
             var result = await this.mediator.Send(new CreateAlbumCommand(dto));
             return Created($"{result.Album.Id}", result.Album);
         }
-
+        
         [HttpDelete]
         [Route("Deletar")]
         public async Task<IActionResult> Deletar(AlbumInputDeleteDto dto)
