@@ -11,12 +11,12 @@ namespace Spotify.Application.Account.Service
 {
     public class PlaylistService : IPlaylistService
     {
-        private readonly IPlaylistRepository musicaRepository;
+        private readonly IPlaylistRepository playlistRepository;
         private readonly IMapper mapper;
 
         public PlaylistService(IPlaylistRepository PlaylistRepository, IMapper mapper)
         {
-            this.musicaRepository = PlaylistRepository;
+            this.playlistRepository = PlaylistRepository;
             this.mapper = mapper;
         }
 
@@ -24,7 +24,7 @@ namespace Spotify.Application.Account.Service
         {
             var Playlist = this.mapper.Map<Spotify.Domain.Account.Playlist>(dto);
 
-            await this.musicaRepository.Save(Playlist);
+            await this.playlistRepository.Save(Playlist);
 
             return this.mapper.Map<PlaylistOutputDto>(Playlist);
 
@@ -34,7 +34,7 @@ namespace Spotify.Application.Account.Service
         {
             var Playlist = this.mapper.Map<Spotify.Domain.Account.Playlist>(dto);
 
-            await this.musicaRepository.Delete(Playlist);
+            await this.playlistRepository.Delete(Playlist);
 
             return this.mapper.Map<PlaylistOutputDto>(Playlist);
 
@@ -44,7 +44,7 @@ namespace Spotify.Application.Account.Service
         {
             var Playlist = this.mapper.Map<Spotify.Domain.Account.Playlist>(dto);
 
-            await this.musicaRepository.Update(Playlist);
+            await this.playlistRepository.Update(Playlist);
 
             return this.mapper.Map<PlaylistOutputDto>(Playlist);
 
@@ -53,7 +53,7 @@ namespace Spotify.Application.Account.Service
 
         public async Task<List<PlaylistOutputDto>> ObterTodos()
         {
-            var Playlist = await this.musicaRepository.GetAll();
+            var Playlist = await this.playlistRepository.ObterTodasPlaylists();
 
             return this.mapper.Map<List<PlaylistOutputDto>>(Playlist);
         }

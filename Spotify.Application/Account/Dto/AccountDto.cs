@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spotify.Application.Album.Dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace Spotify.Application.Account.Dto
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id);
 
 
-    public record UsuarioOutputDto(Guid Id, string Nome, string Email, string Password);
+    public record UsuarioOutputDto(Guid Id, string Nome, string Email, string Password, List<PlaylistOutputDto> Playlists);
 
 
 
@@ -40,7 +41,7 @@ namespace Spotify.Application.Account.Dto
     public record PlaylistInputDeleteDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id);
 
-    public record PlaylistOutputDto(Guid Id, string Nome);
+    public record PlaylistOutputDto(Guid Id, string Nome, List<MusicaOutputDto> Musicas);
 
 
 }

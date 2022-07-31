@@ -9,5 +9,6 @@ namespace Spotify.Domain.Album.Repository
 {
     public interface IBandaRepository : IRepository<Banda>
     {
+        Task<IEnumerable<Banda>> ObterTodasBandas();
     }
 }

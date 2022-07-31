@@ -56,7 +56,7 @@ namespace Spotify.Application.Album.Dto
     public record BandaInputDeleteDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id);    
 
-    public record BandaOutputDto(Guid Id, string Nome, string Foto, string Descricao);
+    public record BandaOutputDto(Guid Id, string Nome, string Foto, string Descricao, List<AlbumOutputUpdateDeleteDto> Albuns);
 
     
 

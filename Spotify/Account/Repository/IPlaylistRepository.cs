@@ -9,5 +9,6 @@ namespace Spotify.Domain.Account.Repository
 {
     public interface IPlaylistRepository : IRepository<Playlist>
     {
+        Task<IEnumerable<Playlist>> ObterTodasPlaylists();
     }
 }

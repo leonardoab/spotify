@@ -20,7 +20,7 @@ namespace Spotify.Repository.Mapping
             builder.Property(x => x.Foto).IsRequired();
             builder.Property(x => x.Descricao).IsRequired().HasMaxLength(1024);
 
-            builder.HasMany(x => x.Albums).WithOne().OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(x => x.Albuns).WithOne().OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

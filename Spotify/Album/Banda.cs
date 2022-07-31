@@ -13,19 +13,19 @@ namespace Spotify.Domain.Album
         public string Nome { get; set; }
         public string Foto { get; set; }
         public string Descricao { get; set; }
-        public IList<Album> Albums { get; set; }
+        public IList<Album> Albuns { get; set; }
 
         public void CreateAlbum(string nome, IList<Musica> musicas)
         {
             var album = AlbumFactory.Create(nome, musicas);
-            this.Albums.Add(album); 
+            this.Albuns.Add(album); 
         }
 
         public int QuantidadeAlbuns() 
-            => this.Albums.Count;
+            => this.Albuns.Count;
 
         public IEnumerable<Musica> ObterMusicas()
-            => this.Albums.SelectMany(x => x.Musicas).AsEnumerable();
+            => this.Albuns.SelectMany(x => x.Musicas).AsEnumerable();
 
     }
 }

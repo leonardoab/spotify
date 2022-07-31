@@ -11,12 +11,12 @@ namespace Spotify.Application.Account.Service
 {
     public class UsuarioService : IUsuarioService
     {
-        private readonly IUsuarioRepository musicaRepository;
+        private readonly IUsuarioRepository usuarioRepository;
         private readonly IMapper mapper;
 
         public UsuarioService(IUsuarioRepository UsuarioRepository, IMapper mapper)
         {
-            this.musicaRepository = UsuarioRepository;
+            this.usuarioRepository = UsuarioRepository;
             this.mapper = mapper;
         }
 
@@ -25,7 +25,9 @@ namespace Spotify.Application.Account.Service
             var Usuario = this.mapper.Map<Spotify.Domain.Account.Usuario>(dto);
 
             Usuario.Validate();
-            Usuario.SetPassword();            
+            Usuario.SetPassword();
+
+            await this.usuarioRepository.Save(Usuario);
 
             return this.mapper.Map<UsuarioOutputDto>(Usuario);
 
@@ -35,7 +37,7 @@ namespace Spotify.Application.Account.Service
         {
             var Usuario = this.mapper.Map<Spotify.Domain.Account.Usuario>(dto);
 
-            await this.musicaRepository.Delete(Usuario);
+            await this.usuarioRepository.Delete(Usuario);
 
             return this.mapper.Map<UsuarioOutputDto>(Usuario);
 
@@ -47,7 +49,7 @@ namespace Spotify.Application.Account.Service
 
             Usuario.Validate();
 
-            await this.musicaRepository.Update(Usuario);
+            await this.usuarioRepository.Update(Usuario);
 
             return this.mapper.Map<UsuarioOutputDto>(Usuario);
 
@@ -56,7 +58,7 @@ namespace Spotify.Application.Account.Service
 
         public async Task<List<UsuarioOutputDto>> ObterTodos()
         {
-            var Usuario = await this.musicaRepository.GetAll();
+            var Usuario = await this.usuarioRepository.ObterTodosUsuarios();
 
             return this.mapper.Map<List<UsuarioOutputDto>>(Usuario);
         }

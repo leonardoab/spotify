@@ -1,4 +1,5 @@
-﻿using Spotify.Domain.Account;
+﻿using Microsoft.EntityFrameworkCore;
+using Spotify.Domain.Account;
 using Spotify.Domain.Account.Repository;
 using Spotify.Domain.Album.Repository;
 using Spotify.Repository.Context;
@@ -16,6 +17,11 @@ namespace Spotify.Repository.Repository
         public UsuarioRepository(SpotifyContext context) : base(context)
         {
             
-        }        
+        }
+
+        public async Task<IEnumerable<Usuario>> ObterTodosUsuarios()
+        {
+            return await this.Query.Include(x => x.Playlists).ToListAsync();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Spotify.Test.Application
     {
         
 
-        [Fact]
+       /* [Fact]
         public async Task DeveCriarBandaComSucesso()
         {
             BandaInputCreateDto dtoInput = new BandaInputCreateDto("XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
@@ -104,7 +104,7 @@ namespace Spotify.Test.Application
             Assert.NotNull(result);
 
 
-        }
+        }*/
 
         
 

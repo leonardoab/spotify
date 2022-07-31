@@ -1,4 +1,5 @@
-﻿using Spotify.Domain.Album;
+﻿using Microsoft.EntityFrameworkCore;
+using Spotify.Domain.Album;
 using Spotify.Domain.Album.Repository;
 using Spotify.Repository.Context;
 using Spotify.Repository.Database;
@@ -16,6 +17,11 @@ namespace Spotify.Repository.Repository
         {
 
 
+        }
+
+        public async Task<IEnumerable<Banda>> ObterTodasBandas()
+        {
+            return await this.Query.Include(x => x.Albuns).ToListAsync();
         }
     }
 }

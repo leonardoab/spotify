@@ -10,5 +10,6 @@ namespace Spotify.Domain.Account.Repository
 {
     public interface IUsuarioRepository : IRepository<Usuario>
     {
+        Task<IEnumerable<Usuario>> ObterTodosUsuarios();
     }
 }
