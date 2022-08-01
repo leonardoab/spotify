@@ -29,6 +29,15 @@ namespace Spotify.Application.Account.Profile
 
             CreateMap<PlaylistInputCreateDto, Spotify.Domain.Account.Playlist>();
 
+            CreateMap<PlaylistInputCreateSemMusicasDto, Spotify.Domain.Account.Playlist>();
+
+            CreateMap<PlaylistInputUpdateSemMusicaDto, Spotify.Domain.Account.Playlist>();
+
+            
+
+
+
+
             CreateMap<PlaylistInputUpdateDto, Spotify.Domain.Account.Playlist>();
                
             CreateMap<PlaylistInputDeleteDto, Spotify.Domain.Account.Playlist>();

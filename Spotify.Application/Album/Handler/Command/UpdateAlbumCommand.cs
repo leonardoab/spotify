@@ -21,9 +21,9 @@ namespace Spotify.Application.Album.Handler.Command
 
     public class UpdateAlbumCommandResponse
     {
-        public AlbumOutputUpdateDeleteDto Album { get; set; }       
+        public AlbumOutputDto Album { get; set; }       
 
-        public UpdateAlbumCommandResponse(AlbumOutputUpdateDeleteDto album)
+        public UpdateAlbumCommandResponse(AlbumOutputDto album)
         {
             Album = album;
             

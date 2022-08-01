@@ -13,14 +13,16 @@ namespace Spotify.Application.Account.Dto
     public record UsuarioInputCreateDto(
         [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
         [Required(ErrorMessage = "Email é obrigatório")] string Email,
-        [Required(ErrorMessage = "Password é obrigatório")] string Password
+        [Required(ErrorMessage = "Password é obrigatório")] string Password,
+         List<PlaylistInputCreateSemMusicasDto> Playlists
         );
 
     public record UsuarioInputUpdateDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
                 [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
                 [Required(ErrorMessage = "Email é obrigatório")] string Email,
-                [Required(ErrorMessage = "Password é obrigatório")] string Password);
+                [Required(ErrorMessage = "Password é obrigatório")] string Password,
+         List<PlaylistInputUpdateSemMusicaDto> Playlists);
 
     public record UsuarioInputDeleteDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id);
@@ -32,11 +34,18 @@ namespace Spotify.Application.Account.Dto
 
 
     public record PlaylistInputCreateDto(
-            [Required(ErrorMessage = "Nome é obrigatório")] string Nome  );
+            [Required(ErrorMessage = "Nome é obrigatório")] string Nome, List<MusicaInputCreateDto> Musicas);
+
+    public record PlaylistInputCreateSemMusicasDto(
+            [Required(ErrorMessage = "Nome é obrigatório")] string Nome);
 
     public record PlaylistInputUpdateDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
-                [Required(ErrorMessage = "Nome é obrigatório")] string Nome );
+                [Required(ErrorMessage = "Nome é obrigatório")] string Nome, List<MusicaInputUpdateDto> Musicas);
+
+    public record PlaylistInputUpdateSemMusicaDto(
+                [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
+                [Required(ErrorMessage = "Nome é obrigatório")] string Nome);
 
     public record PlaylistInputDeleteDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id);

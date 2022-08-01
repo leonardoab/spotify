@@ -14,9 +14,13 @@ namespace Spotify.Application.Album.Profile
         public AlbumProfile()
         {
 
-            CreateMap<Spotify.Domain.Album.Album, AlbumOutputCreateDto>();
+            CreateMap<Spotify.Domain.Album.Album, AlbumOutputDto>();
 
             CreateMap<Spotify.Domain.Album.Album, AlbumOutputUpdateDeleteDto>();
+
+            CreateMap<AlbumInputUpdateSemMusicasDto, Spotify.Domain.Album.Album>();
+
+            
 
             CreateMap<AlbumInputCreateDto, Spotify.Domain.Album.Album>();            
 
@@ -30,9 +34,7 @@ namespace Spotify.Application.Album.Profile
 
             CreateMap<BandaInputDeleteDto, Spotify.Domain.Album.Banda>();
 
-            CreateMap<Spotify.Domain.Album.Banda, BandaOutputDto>();
-
-            CreateMap<Spotify.Domain.Album.Banda, BandaOutputDto>();
+            CreateMap<Spotify.Domain.Album.Banda, BandaOutputDto>();            
 
             CreateMap<MusicaInputCreateDto, Spotify.Domain.Album.Musica>()
                 .ForPath(x => x.Duracao.Valor, f => f.MapFrom(m => m.Duracao)); 
@@ -43,7 +45,7 @@ namespace Spotify.Application.Album.Profile
             CreateMap<MusicaInputDeleteDto, Spotify.Domain.Album.Musica>();
 
             CreateMap<Spotify.Domain.Album.Musica, MusicaOutputDto>()
-                .ForMember(x => x.Duracao, f => f.MapFrom(m => m.Duracao.ValorFormatado()));   
+                .ForMember(x => x.Duracao, f => f.MapFrom(m => m.Duracao.Valor));   
 
             
 

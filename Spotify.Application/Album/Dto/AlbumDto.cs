@@ -12,7 +12,7 @@ namespace Spotify.Application.Album.Dto
         [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
         [Required(ErrorMessage = "Data Lançamento é obrigatório")] DateTime DataLancamento,
         string Backdrop, 
-        List<MusicaInputCreateDto> Musicas);
+        List<MusicaInputCreateDto> Musicas );
         
     public record AlbumInputDeleteDto(
         [Required(ErrorMessage = "ID é obrigatório")] Guid Id);
@@ -21,9 +21,19 @@ namespace Spotify.Application.Album.Dto
        [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
        [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
        [Required(ErrorMessage = "Data Lançamento é obrigatório")] DateTime DataLancamento,
-       string Backdrop);
+       string Backdrop,
+       List<MusicaInputUpdateDto> Musicas);
 
-    public record AlbumOutputCreateDto(Guid Id, string Nome, DateTime DataLancamento, string Backdrop, List<MusicaOutputDto> Musicas);
+    public record AlbumInputUpdateSemMusicasDto(
+       [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
+       [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
+       [Required(ErrorMessage = "Data Lançamento é obrigatório")] DateTime DataLancamento,
+       string Backdrop     );
+
+
+    public record AlbumOutputDto(Guid Id, string Nome, DateTime DataLancamento, string Backdrop, List<MusicaOutputDto> Musicas);
+
+    
 
     public record AlbumOutputUpdateDeleteDto(Guid Id, string Nome, DateTime DataLancamento, string Backdrop); 
 
@@ -44,14 +54,16 @@ namespace Spotify.Application.Album.Dto
     public record BandaInputCreateDto(
                 [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
                 [Required(ErrorMessage = "Foto é obrigatório")] string Foto,
-                [Required(ErrorMessage = "Descrição é obrigatório")] string Descricao
+                [Required(ErrorMessage = "Descrição é obrigatório")] string Descricao            
+
                 );
 
     public record BandaInputUpdateDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id,
                 [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
                 [Required(ErrorMessage = "Foto é obrigatório")] string Foto,
-                [Required(ErrorMessage = "Descrição é obrigatório")] string Descricao);
+                [Required(ErrorMessage = "Descrição é obrigatório")] string Descricao,
+                List<AlbumInputUpdateSemMusicasDto> Albuns);
 
     public record BandaInputDeleteDto(
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id);    

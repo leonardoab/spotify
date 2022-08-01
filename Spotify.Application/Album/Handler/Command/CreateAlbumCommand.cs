@@ -23,9 +23,9 @@ namespace Spotify.Application.Album.Handler.Command
 
     public class CreateAlbumCommandResponse
     {
-        public AlbumOutputCreateDto Album { get; set; }
+        public AlbumOutputDto Album { get; set; }
 
-        public CreateAlbumCommandResponse(AlbumOutputCreateDto album)
+        public CreateAlbumCommandResponse(AlbumOutputDto album)
         {
             Album = album;
         }
