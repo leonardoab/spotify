@@ -84,8 +84,10 @@ namespace Spotify.Test.Application
         public async Task DeveAtualizarBandaComSucesso()
         {
             List<AlbumOutputUpdateDeleteDto> Albuns = new List<AlbumOutputUpdateDeleteDto>();
+            List<AlbumInputUpdateSemMusicasDto> AlbunsSem = new List<AlbumInputUpdateSemMusicasDto>();
+            
 
-            BandaInputUpdateDto dtoInput = new BandaInputUpdateDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda");
+            BandaInputUpdateDto dtoInput = new BandaInputUpdateDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda", AlbunsSem);
             BandaOutputDto dtoOutput = new BandaOutputDto(Guid.NewGuid(), "XTPO", "https://xpto.com/foto.png", "Lorem ipsum da banda",Albuns);
 
 

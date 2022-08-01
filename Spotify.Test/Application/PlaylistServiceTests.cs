@@ -19,8 +19,9 @@ namespace Spotify.Test.Application
         public async Task DeveCriarPlaylistComSucesso()
         {
             List<MusicaOutputDto> Musicas = new List<MusicaOutputDto>();
+            List<MusicaInputCreateDto> MusicasCreate = new List<MusicaInputCreateDto>();            
 
-            PlaylistInputCreateDto dtoInput = new PlaylistInputCreateDto("XTPO");
+            PlaylistInputCreateDto dtoInput = new PlaylistInputCreateDto("XTPO", MusicasCreate);
             PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO", Musicas);
 
 
@@ -80,8 +81,11 @@ namespace Spotify.Test.Application
         public async Task DeveAtualizarPlaylistComSucesso()
         {
             List<MusicaOutputDto> Musicas = new List<MusicaOutputDto>();
+            List<MusicaInputUpdateDto> MusicasInput = new List<MusicaInputUpdateDto>();
 
-            PlaylistInputUpdateDto dtoInput = new PlaylistInputUpdateDto(Guid.NewGuid(), "XTPO");
+            
+
+            PlaylistInputUpdateDto dtoInput = new PlaylistInputUpdateDto(Guid.NewGuid(), "XTPO", MusicasInput);
             PlaylistOutputDto dtoOutput = new PlaylistOutputDto(Guid.NewGuid(), "XTPO", Musicas);
 
 
