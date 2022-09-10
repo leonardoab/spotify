@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Spotify.Application.Account.Service;
 using Spotify.Application.Album.Service;
 using Spotify.Application.Musica.Service;
+using Spotify.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,10 @@ namespace Spotify.Application
             services.AddScoped<IBandaService, BandaService>();
             services.AddScoped<IAlbumService, AlbumService>();
             services.AddScoped<IMusicaService, MusicaService>();
+
+            services.AddScoped<AzureBlobStorage>();
+
+            services.AddHttpClient();
 
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IPlaylistService, PlaylistService>();

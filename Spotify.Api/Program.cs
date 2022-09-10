@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Spotify.Application;
+using Spotify.Infrastructure;
 using Spotify.Repository;
 using Spotify.Repository.Context;
 
@@ -23,6 +24,8 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+
 
 
 app.UseHttpsRedirection();

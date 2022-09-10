@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Spotify.Application.Album.Dto;
 using Spotify.Domain.Album.Repository;
+using Spotify.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,11 +16,17 @@ namespace Spotify.Application.Album.Service
 
         private readonly IAlbumRepository albumRepository;        
         private readonly IMapper mapper;
-        
 
-        public AlbumService(IAlbumRepository albumRepository, IMapper mapper)
+        private IHttpClientFactory httpClientFactory;
+
+        private AzureBlobStorage storage;
+
+
+        public AlbumService(IAlbumRepository albumRepository, IHttpClientFactory httpClientFactory, AzureBlobStorage storage, IMapper mapper)
         {
-            this.albumRepository = albumRepository;            
+            this.albumRepository = albumRepository;
+            this.httpClientFactory = httpClientFactory;
+            this.storage = storage;
             this.mapper = mapper;
         }
 
@@ -26,13 +34,23 @@ namespace Spotify.Application.Album.Service
         {
             var album = this.mapper.Map<Spotify.Domain.Album.Album>(dto);
 
-            //album.Musicas = this.mapper.Map<List<MusicaInputCreateDto>>(Musica);
-            //album.Musicas = (IList<Domain.Album.Musica>)dto.MusicasNovas;
-            //album.Musicas = this.mapper.Map<List<MusicaOutputDto>>(dto.MusicasNovas);
+
+            HttpClient httpClient = this.httpClientFactory.CreateClient();
+
+            using var response = await httpClient.GetAsync(album.Backdrop);
 
 
+            if (response.IsSuccessStatusCode)
+            {
+                using var stream = await response.Content.ReadAsStreamAsync();
 
-            //album.Musicas.Add((Domain.Album.Musica)(IList<Domain.Album.Musica>)dto.MusicasExistentes);
+                var fileName = $"{Guid.NewGuid()}.jpg";
+
+                var pathStorage = await this.storage.UploadFile(fileName, stream);
+
+                album.Backdrop = pathStorage;
+
+            }
 
             await this.albumRepository.Save(album);
 
