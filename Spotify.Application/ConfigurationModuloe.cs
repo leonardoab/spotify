@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Spotify.Application.Account.Service;
 using Spotify.Application.Album.Service;
 using Spotify.Application.Musica.Service;
@@ -24,6 +26,21 @@ namespace Spotify.Application
             services.AddScoped<IMusicaService, MusicaService>();
 
             services.AddScoped<AzureBlobStorage>();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidateAudience = true,
+                        ValidIssuer = "http://127.0.0.1:80",
+                        ValidAudience = "spotify-api",
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ACDt1vR3lXToPQ1g3MyN"))
+                    };
+                });
 
             services.AddHttpClient();
 

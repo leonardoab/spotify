@@ -13,8 +13,7 @@ namespace Spotify.Application.Account.Dto
     public record UsuarioInputCreateDto(
         [Required(ErrorMessage = "Nome é obrigatório")] string Nome,
         [Required(ErrorMessage = "Email é obrigatório")] string Email,
-        [Required(ErrorMessage = "Password é obrigatório")] string Password,
-         List<PlaylistInputCreateSemMusicasDto> Playlists
+        [Required(ErrorMessage = "Password é obrigatório")] string Password
         );
 
     public record UsuarioInputUpdateDto(
@@ -51,6 +50,12 @@ namespace Spotify.Application.Account.Dto
                 [Required(ErrorMessage = "ID é obrigatório")] Guid Id);
 
     public record PlaylistOutputDto(Guid Id, string Nome, List<MusicaOutputDto> Musicas);
+
+
+
+    public record UsuarioInputAutenticacaoDto(
+                [Required(ErrorMessage = "Email é obrigatório")] string Email,
+                [Required(ErrorMessage = "Password é obrigatório")] string Password);
 
 
 }

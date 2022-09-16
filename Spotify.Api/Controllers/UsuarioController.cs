@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Spotify.Application.Account.Dto;
@@ -10,20 +11,11 @@ namespace Spotify.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsuarioController : ControllerBase
     {
-        /*public IUsuarioRepository UsuarioRepository { get; }
-
-        public UsuarioController(IUsuarioRepository usuarioRepository)
-        {
-            UsuarioRepository = usuarioRepository;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            return Ok(await this.UsuarioRepository.GetAll());
-        }*/
+       
+        
 
         private readonly IMediator mediator;
 
@@ -38,6 +30,7 @@ namespace Spotify.Api.Controllers
         {
             return Ok(await this.mediator.Send(new GetAllUsuarioQuery()));
         }
+
 
         //[HttpPost("{idBanda}")]
         [HttpPost]
